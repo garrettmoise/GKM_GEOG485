@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,7 @@
     margin-right: auto }
 </style>
 <script type="text/javascript"
-    src="http://maps.google.com/maps/api/js?sensor=true">
+    src="http://maps.google.com/maps/api/js?sensor=false">
 </script>
 <script type="text/javascript">
   function initialize() {
@@ -27,8 +28,59 @@
 	style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
       scaleControl: true,
       
-    }
-    
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+    var elrito = new google.maps.Marker({
+	position: new google.maps.LatLng(36.344305,-106.188698), 
+	map: map,
+	title: 'El Rito',
+	clickable: true,
+	icon: 'http://google-maps-icons.googlecode.com/files/climbing.png'
+	});
+   var trespiedras = new google.maps.Marker({
+	position: new google.maps.LatLng(36.650242,-105.966225), 
+	map: map,
+	title: 'Tres Piedras',
+	clickable: true,
+	icon: 'http://google-maps-icons.googlecode.com/files/climbing.png'
+	});
+   var diablocanyon = new google.maps.Marker({
+	position: new google.maps.LatLng(35.80490, -106.12810), 
+	map: map,
+	title: 'Diablo Canyon',
+	clickable: true,
+	icon: 'http://google-maps-icons.googlecode.com/files/climbing.png'
+	});
+var lasconchas = new google.maps.Marker({
+	position: new google.maps.LatLng(35.815221,-106.531999), 
+	map: map,
+	title: 'Las Conchas',
+	clickable: true,
+	icon: 'http://google-maps-icons.googlecode.com/files/climbing.png'
+	});
+var palomaspeak = new google.maps.Marker({
+	position: new google.maps.LatLng(35.272532,-106.391602), 
+	map: map,
+	title: 'Palomas Peak',
+	clickable: true,
+	icon: 'http://google-maps-icons.googlecode.com/files/climbing.png'
+	});
+var enchanted = new google.maps.Marker({
+	position: new google.maps.LatLng(34.23043, -107.91730), 
+	map: map,
+	title: 'Enchanted Tower',
+	clickable: true,
+	icon: 'http://google-maps-icons.googlecode.com/files/climbing.png'
+	});
+var soccoro = new google.maps.Marker({
+	position: new google.maps.LatLng(34.00160, -106.99160), 
+	map: map,
+	title: 'Soccoro Box Canyon',
+	clickable: true,
+	icon: 'http://google-maps-icons.googlecode.com/files/climbing.png'
+	});
+	  }
 
 </script>
 </head>
