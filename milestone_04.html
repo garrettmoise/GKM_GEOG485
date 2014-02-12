@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; 
+                margin: 0px; 
+                padding: 0px; 
+                background-color: black; 
+                color: #CCCCCC;
+                text-align: center}
+            #map_canvas { width:90%; 
+                height:80%; 
+                margin-left: auto; 
+                margin-right: auto }
+        </style>
+        <script type="text/javascript"
+            src="http://maps.google.com/maps/api/js?sensor=false">
+        </script>
+        <script type="text/javascript">
+            function initialize() {
+                var charleston = new google.maps.LatLng(32.783845,-79.937124)
+                var myOptions = {
+                    zoom: 10,
+                    center: charleston,
+                    mapTypeId: google.maps.MapTypeId.SATELLITE,
+                    styles: [
+                    [
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#ffa57f" },
+      { "weight": 1 },
+      { "lightness": -43 }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#7fccff" }
+    ]
+  },{
+    "featureType": "poi.attraction",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#e6cf9e" }
+    ]
+  }
+]
+                };
+                var map = new google.maps.Map(
+                    document.getElementById("map_canvas"), 
+                    myOptions);
+            }
+        </script>
+    </head>
+    
+    <body onload="initialize()">
+    
+        <h1>Charleston, South Carolina</h1>
+        <p>
+	Garrett Moise<br>
+	February 11, 2014
+	</p>
+	<h1>Milestone #3</h1>
+	<h2>Question 1</h2>
+	<p>I want to depict the area around Charleston, SC.  I am from Charleston and plan to move back over there for work after college is completed.</p>
+	<h2>Question 2</h2>
+	<p>The center point is 32.783845, -79.937124</p>
+	<h2>Question 3</h2>
+	<p>I think that the Satellite version is appropriate for my map because it is interesting to see terrain as well as a visualization of the water and the city.</p>
+	<h2>Questions 4</h2>
+	<p>The scale could be considered local, but also a little larger than local.  It could be considered the Charleston Metro Region.  A zoom of 10 will allow me to show this level of zoom.</p>
+        <div id="map_canvas" style="width:100%; height: 100%"></div></div>
+    </body>
+</html>
