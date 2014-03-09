@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<!-- This page can be used as a template for completing your writeups for milestone and "deep dive" assignments -->
+	<!-- Replace the content placeholders with your own content -->
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Geography 485L/585L Assignment Template</title>
+	</head>
+	<body>
+	<p>
+	Garrett Moise<br>
+	3/9/2014
+	</p>
+	<h1>Milestone 5</h1>
+	<h2>Question 1- Briefly describe each dataset based upon the information from the web site.</h2>
+	<h4>Vegetation Data for NM</h4>
+	<p>Vector Data last updated in 2009</p>
+	<p>UNM RGIS</p>
+	<h4>NM known mineral deposit areas</h4>
+	<p>Vector Data last updated in 2009</p>
+	<p>UNM RGIS</p>
+	<h4>NM Cabezon Peak 2013 GeoTIFF</h4>
+	<p>US Topo GeoTiff</p>
+	<h2>Question 2- Examine each file using either gdalinfo or ogrinfo (depending upon whether it
+		is a raster or vector data product), and answer the following questions about
+		each data set:</h2>
+	<h4>Vegetation Data for NM</h4>
+	<p>Projection: Using the ogrinfo command in FWtools and looking through the metadata, I came up with two different projections.  ogrinfo came up with WGS 1984 and the metadata states that it is in NAD 1927.</p>
+	<p>Spatial extent as latlng: (31.330872, -109.051338) to (37.001747, -102.998901)</p>
+	<p>479 features</p>
+	<h4>NM known mineral deposit areas</h4>
+	<p>Projection: GCS_WGS_1984</p>
+	<p>Spatial extent as latlng: (31.798595, -109.043091) to (36.940117, -103.170486)</p>
+	<p>773 features</p>
+	<h2>Question 3- Use proj or cs2cs (I suggest you use cs2cs) to calculate the coordinates of
+		the spatial extent of the datasets that you downloaded in UTM Zone 13N, NAD27.
+		Paste the input and output of the command(s) into your writeup.</h2>
+	<h4>Vegetation Data for NM</h4>
+	<p>c:\>cs2cs +init="EPSG:2258" +to +init="EPSG:26713"</p>
+	<p>102.998901W 37.001747N
+	   678060.25 4096734.81 0.00
+	</p>
+	<h4>NM known mineral deposit areas</h4>
+	<p>c:\>cs2cs +init="EPSG:2258" +to +init="EPSG:26713"</p>
+	<p>102.994202W 36.969204N
+	   67859.83 4093131.72 0.00
+	</p>
+	
+	</body>
+</html>
