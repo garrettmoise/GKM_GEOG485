@@ -53,28 +53,7 @@
                 };
                 
 </script>
-<script>
 
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-        myOptions);
-
-var collegeofcharleston = new google.maps.Marker({
-	position: new google.maps.LatLng(32.783819,-79.937189), 
-	map: map,
-	title: 'College of Charleston',
-	clickable: true,
-});
-	var collegeofcharlestonInfoContent = '<div class="infoBox">'+
-	'<p>This is the College of Charleston.  I will be attending there in Fall 2014</p>'+
-	'</div>'
-	var collegeofcharlestonInfoWindow = new google.maps.InfoWindow({content: collegeofcharlestonInfoContent
-	});
-	google.maps.event.addListener(collegeofcharleston, 'click', function() {
-	collegeofcharlestonInfoWindow.open(map,collegeofcharleston);
-	});
-
-            
-        </script>
     </head>
     
     <body onload="initialize()">
