@@ -26,7 +26,9 @@
                     center: charleston,
                     mapTypeId: google.maps.MapTypeId.TERRAIN
                     
-                }; var map = new google.maps.Map(
+                }; 
+                
+                var map = new google.maps.Map(
                     document.getElementById("map_canvas"), 
                     myOptions);
                     
@@ -34,9 +36,17 @@
                     	position: new google.maps.LatLng(32.783747, -79.937103),
                     	map: map,
                     	title: 'Point of Interest'
-                    })
-                
-            }
+                    });
+                    
+                    var infowindow = new google.maps.InfoWindow({
+                    	content: 'The College of Charleston'
+                    });
+                    
+                    google.maps.event.addListener(marker, 'click', function() {
+                    	infowindow.open(map, marker);
+                    });
+            };
+            })();
         </script>
     </head>
     
