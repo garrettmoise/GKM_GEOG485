@@ -50,22 +50,11 @@
     ]
   }
 ]
-                };
-                var collegeofcharleston = new google.maps.LatLng(32.783819,-79.937189)
-				var myOptions = {
-					zoom: 10,
-					center: charleston,
-					mapTypeId: google.maps.MapTypeId.TERRAIN
-					};
-				var map = new google.maps.Map(
-					document.getElementById("map_canvas"),
-					myOptions);
-
-				var collegeofcharlestonMarker = new google.maps.Marker({
-					position: collegeofcharleston,
-					title:"College of Charleston"
-					});
-				collegeofcharlestonMarker.setMap(map);
+                  var collegeofcharlestonMarker = new google.maps.Marker({
+			position: collegeofcharleston,
+			title:"College of Charleston"
+			});
+			collegeofcharlestonMarker.setMap(map);
 
 				var CharlestonCoordinates = [
 				 collegeofcharleston,
@@ -73,18 +62,15 @@
 				 
 				];
 
-			var collegeofcharlestonInfoContent = '<div class="infoBox">' +
+		var collegeofcharlestonInfoContent = '<div class="infoBox">' +
 				'<p>The College of Charleston is where I plan to attend graduate school.</p>' +
 				'</div>'
-			var collegeofcharlestonInfoWindow = new google.maps.InfoWindow({
+		var collegeofcharlestonInfoWindow = new google.maps.InfoWindow({
 				content: collegeofcharlestonInfoContent
 			});
 			google.maps.event.addListener(collegeofcharlestonMarker,'click', function() {
 				collegeofcharlestonInfoWindow.open(map,collegeofcharlestonMarker);
 				});
-
-
-			};
                 var map = new google.maps.Map(
                     document.getElementById("map_canvas"), 
                     myOptions);
