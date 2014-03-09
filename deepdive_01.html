@@ -50,31 +50,45 @@
     ]
   }
 ]
-                  var collegeofcharlestonMarker = new google.maps.Marker({
-			position: collegeofcharleston,
-			title:"College of Charleston"
-			});
-			collegeofcharlestonMarker.setMap(map);
+                };
+                var map = new google.maps.Map(document.getElementById("map_canvas"),
+        myOptions);
+	setMarkers(map, placesincharleston);
+  }
+</script>
+<script type="text/javascript">
+	var placesincharleston = [
+	{ 
+		name: "College of Charleston",
+		point: new google.maps.LatLng(32.783819, -79.937189),
+		label: "The College of Charleston"
+	},
+	{
+		name: "Factory on 5",
+		point: new google.maps.LatLng(35.101261, -106.649611),
+		label: "Factory on 5th Art Space"
+	},
+	{
+		name: "Los Poblanos",
+		point: new google.maps.LatLng(35.147152, -106.664960),
+		label: "Los Poblanos Historic Inn and Organic Farm"
+	},
+	{
+		name: "Nature Center"
+		point: new google.maps.LatLng(35.128440, -106.683315),
+		label: "Rio Grande Nature Center"
+	},
+	{
+		name: "Tram"
+		point: new google.maps.LatLng(35.1906345, -106.4793087),
+		label: "Sandia Peak Ski and Tramway"
+	}
+];
 
-				var CharlestonCoordinates = [
-				 collegeofcharleston,
-				 new google.maps.LatLng(32.783819,-79.937189),
-				 
-				];
-
-		var collegeofcharlestonInfoContent = '<div class="infoBox">' +
-				'<p>The College of Charleston is where I plan to attend graduate school.</p>' +
-				'</div>'
-		var collegeofcharlestonInfoWindow = new google.maps.InfoWindow({
-				content: collegeofcharlestonInfoContent
-			});
-			google.maps.event.addListener(collegeofcharlestonMarker,'click', function() {
-				collegeofcharlestonInfoWindow.open(map,collegeofcharlestonMarker);
-				});
-                var map = new google.maps.Map(
-                    document.getElementById("map_canvas"), 
-                    myOptions);
+function setMarkers (map, locations) 
+</script>
             }
+            
         </script>
     </head>
     
@@ -85,7 +99,7 @@
 	Garrett Moise<br>
 	February 12, 2014
 	</p>
-	<h1>Deep Dive #1</h1>
+	<h1>Milestone #4</h1>
         <div id="map_canvas" style="width:100%; height: 100%"></div></div>
     </body>
 </html>
