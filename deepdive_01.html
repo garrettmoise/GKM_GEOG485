@@ -24,49 +24,29 @@
                 var myOptions = {
                     zoom: 10,
                     center: charleston,
-                    mapTypeId: google.maps.MapTypeId.TERRAIN,
-                    styles: [
-  {
-    "featureType": "road.highway",
-    "elementType": "geometry",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#ffa57f" },
-      { "weight": 1 },
-      { "lightness": -43 }
-    ]
-  },{
-    "featureType": "water",
-    "elementType": "geometry.fill",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#7fccff" }
-    ]
-  },{
-    "featureType": "poi.attraction",
-    "stylers": [
-      { "visibility": "on" },
-      { "color": "#ff00ee" }
-    ]
-  }
-]
-                };
-                var map = new google.maps.Map(
-                    document.getElementById("charleston"), 
+                    mapTypeId: google.maps.MapTypeId.TERRAIN
+                    
+                }; var map = new google.maps.Map(
+                    document.getElementById("map_canvas"), 
                     myOptions);
-            };
-           
+                    
+                    var marker = new google.maps.Marker({
+                    	position: new google.maps.LatLng(32.783747, -79.937103),
+                    	map: map
+                    })
+                
+            }
         </script>
-               </head>
+    </head>
     
     <body onload="initialize()">
     
         <h1>Charleston, South Carolina</h1>
         <p>
 	Garrett Moise<br>
-	February 12, 2014
+	February 11, 2014
 	</p>
-	<h1>Milestone #4</h1>
-        <div id="charleston" style="width:100%; height: 100%"></div></div>
+    
+    <div id="map_canvas" style="width:100%; height: 100%"></div></div>	
     </body>
 </html>
