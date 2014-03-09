@@ -51,14 +51,7 @@
   }
 ]
                 };
-                var map = new google.maps.Map(
-                    document.getElementById("map_canvas"), 
-                    myOptions);
-            }
-        </script>
-        <script type="text/javascript">
-        	function initialize() {
-				var collegeofcharleston = new google.maps.LatLng(32.783819,-79.937189)
+                var collegeofcharleston = new google.maps.LatLng(32.783819,-79.937189)
 				var myOptions = {
 					zoom: 10,
 					center: charleston,
@@ -91,7 +84,11 @@
 				});
 
 
-			}
+			};
+                var map = new google.maps.Map(
+                    document.getElementById("map_canvas"), 
+                    myOptions);
+            }
         </script>
     </head>
     
