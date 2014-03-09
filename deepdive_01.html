@@ -59,6 +59,52 @@
                     google.maps.event.addListener(marker, 'click', function() {
                     	infowindow.open(map, marker);
                     });
+                    
+                    var marker = new google.maps.Marker({
+                    	position: new google.maps.LatLng(32.799531, -79.754219),
+                    	map: map,
+                    	title: 'Point of Interest'
+  
+                    });
+                    
+                    var infowindow = new google.maps.InfoWindow({
+                    	content: 'Isle of Palms'
+                    });
+                    
+                    google.maps.event.addListener(marker, 'click', function() {
+                    	infowindow.open(map, marker);
+                
+                    });
+                    
+                    var marker = new google.maps.Marker({
+                    	position: new google.maps.LatLng(32.980138,-80.03746),
+                    	map: map,
+                    	title: 'Point of Interest'
+  
+                    });
+                    
+                    var infowindow = new google.maps.InfoWindow({
+                    	content: 'Goose Creek'
+                    });
+                    
+                    google.maps.event.addListener(marker, 'click', function() {
+                    	infowindow.open(map, marker);
+                    	
+                    });
+                    
+                    var marker = new google.maps.Marker({
+                    	position: new google.maps.LatLng(32.706693,-79.957809),
+                    	map: map,
+                    	title: 'Point of Interest'
+  
+                    });
+                    
+                    var infowindow = new google.maps.InfoWindow({
+                    	content: 'James Island'
+                    });
+                    
+                    google.maps.event.addListener(marker, 'click', function() {
+                    	infowindow.open(map, marker);	
                 
             }
         </script>
