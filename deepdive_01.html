@@ -59,19 +59,6 @@
         <script type="text/javascript">
         	function initialize() {
 				var collegeofcharleston = new google.maps.LatLng(32.783819,-79.937189)
-				var kirk = new google.maps.LatLng(44.342424,-103.758172)
-				var lead = new google.maps.LatLng(44.346644,-103.780634)
-				var sugarloaf = new google.maps.LatLng(44.331497,-103.788501)
-				var englewood = new google.maps.LatLng(44.297035,-103.784300)
-				var dumont = new google.maps.LatLng(44.227063,-103.786111)
-				var rochford = new google.maps.LatLng(44.122247,-103.713435)
-				var mystic = new google.maps.LatLng(44.076611,-103.639388)
-				var hillcity = new google.maps.LatLng(43.927400,-103.573983)
-				var themountain = new google.maps.LatLng(43.802882,-103.635160)
-				var custer = new google.maps.LatLng(43.765129,-103.597869)
-				var whiteelephant = new google.maps.LatLng(43.653867,-103.590417)
-				var pringle = new google.maps.LatLng(43.609095,-103.592929)
-				var edgemont = new google.maps.LatLng(43.298250,-103.824724)
 				var myOptions = {
 					zoom: 10,
 					center: charleston,
@@ -87,185 +74,20 @@
 					});
 				collegeofcharlestonMarker.setMap(map);
 
-				var kirkMarker = new google.maps.Marker({
-					position: kirk,
-					title:"Kirk Trailhead-Mile Post 105.3"
-					});
-				kirkMarker.setMap(map);
-
-				var leadMarker = new google.maps.Marker({
-					position: lead,
-					title:"Lead Trailhead-Mile Post 103.7"
-					});
-				leadMarker.setMap(map);
-
-				var sugarloafMarker = new google.maps.Marker({
-					position: sugarloaf,
-					title:"Sugarloaf Trailhead-Mile Post 103.3"
-					});
-				sugarloafMarker.setMap(map);
-
-				var englewoodMarker = new google.maps.Marker({
-					position: englewood,
-					title:"Englewood Trailhead-Mile Post 98.5"
-					});
-				englewoodMarker.setMap(map);
-
-				var dumontMarker = new google.maps.Marker({
-					position: dumont,
-					title:"Dumont Trailhead-Mile Post 92.6"
-					});
-				dumontMarker.setMap(map);
-
-				var rochfordMarker = new google.maps.Marker({
-					position: rochford,
-					title:"Rochford Trailhead-Mile Post 82.6"
-					});
-				rochfordMarker.setMap(map);
-
-				var mysticMarker = new google.maps.Marker({
-					position: mystic,
-					title:"Mystic Trailhead-Mile Post 74.7"
-					});
-				mysticMarker.setMap(map);
-
-				var hillcityMarker = new google.maps.Marker({
-					position: hillcity,
-					title:"Hill City Trailhead-Mile Post 60.1"
-					});
-				hillcityMarker.setMap(map);
-
-				var themountainMarker = new google.maps.Marker({
-					position: themountain,
-					title:"The Mountain Trailhead-Mile Post 49.6"
-					});
-				themountainMarker.setMap(map);
-
-				var custerMarker = new google.maps.Marker({
-					position: custer,
-					title:"Custer Trailhead-Mile Post 44.5"
-					});
-				custerMarker.setMap(map);
-
-				var whiteelephantMarker = new google.maps.Marker({
-					position: whiteelephant,
-					title:"White Elephant Trailhead-Mile Post 35.7"
-					});
-				whiteelephantMarker.setMap(map);
-
-				var pringleMarker = new google.maps.Marker({
-					position: pringle,
-					title:"Pringle Trailhead-Mile Post 32.1"
-					});
-				pringleMarker.setMap(map);
-
-				var edgemontMarker = new google.maps.Marker({
-					position: edgemont,
-					title:"Edgemont Trailhead-Mile Post 0"
-					});
-				edgemontMarker.setMap(map);
-
-				var mickelsontrailCoordinates = [
-				 deadwood,
-				 new google.maps.LatLng(44.358715,-103.739830),
-				 new google.maps.LatLng(44.341284,-103.756996),
-				 lead,
-				 new google.maps.LatLng(44.318936,-103.773476),
-				 new google.maps.LatLng(44.285028,-103.786179),
-				 new google.maps.LatLng(44.274213,-103.803345),
-				 new google.maps.LatLng(44.256388,-103.796280),
-				 new google.maps.LatLng(44.235729,-103.798340),
-				 new google.maps.LatLng(44.227242,-103.776539),
-				 new google.maps.LatLng(44.154869,-103.751476),
-				 new google.maps.LatLng(44.150558,-103.753193),
-				 new google.maps.LatLng(44.140950,-103.742378),
-				 new google.maps.LatLng(44.120620,-103.727272), 
-				 new google.maps.LatLng(44.102996,-103.639553),
-				 new google.maps.LatLng(44.088571,-103.623760),
-				 new google.maps.LatLng(44.049843,-103.668049),
-				 new google.maps.LatLng(43.966874,-103.635605),
-				 new google.maps.LatLng(43.937956,-103.574349),
-				 hillcity,
-				 new google.maps.LatLng(43.892202,-103.589455),
-				 new google.maps.LatLng(43.844432,-103.634087),
-				 new google.maps.LatLng(43.803067,-103.638550),
-				 new google.maps.LatLng(43.805297,-103.618294),
-				 new google.maps.LatLng(43.791915,-103.622757),
-				 new google.maps.LatLng(43.768119,-103.592201),
-				 custer,
-				 new google.maps.LatLng(43.754481,-103.611084),
-				 new google.maps.LatLng(43.723723,-103.604218),
-				 new google.maps.LatLng(43.718512,-103.614174),
-				 new google.maps.LatLng(43.666382,-103.602844),
-				 new google.maps.LatLng(43.655950,-103.589798),
-				 new google.maps.LatLng(43.639305,-103.601815),
-				 new google.maps.LatLng(43.606002,-103.595978),
-				 new google.maps.LatLng(43.605753,-103.615891),
-				 new google.maps.LatLng(43.554769,-103.649536),
-				 new google.maps.LatLng(43.536603,-103.643357),
-				 new google.maps.LatLng(43.486556,-103.690392),
-				 new google.maps.LatLng(43.334168,-103.714081),
-				 new google.maps.LatLng(43.322430,-103.755280),
-				 new google.maps.LatLng(43.343907,-103.775536),
-				 edgemont
+				var CharlestonCoordinates = [
+				 collegeofcharleston,
+				 new google.maps.LatLng(32.783819,-79.937189),
+				 
 				];
-			 var mickelsontrailPath = new google.maps.Polyline({
-				path: mickelsontrailCoordinates,
-				strokeColor: "#00FF00",
-				strokeOpacity: 1.0,
-				strokeWeight: 2
-			});
-			mickelsontrailPath.setMap(map);
 
-			var edgemontInfoContent = '<div class="infoBox">' +
-				'<p>Here is the beginning of the Mickelson Trail. Mile Marker- 0</p>' +
+			var collegeofcharlestonInfoContent = '<div class="infoBox">' +
+				'<p>The College of Charleston is where I plan to attend graduate school.</p>' +
 				'</div>'
-			var edgemontInfoWindow = new google.maps.InfoWindow({
-				content: edgemontInfoContent
+			var collegeofcharlestonInfoWindow = new google.maps.InfoWindow({
+				content: collegeofcharlestonInfoContent
 			});
-			google.maps.event.addListener(edgemontMarker,'click', function() {
-				edgemontInfoWindow.open(map,edgemontMarker);
-				});
-
-
-			var custerInfoContent = '<div class="infoBox">' +
-				'<p>Custer Trailhead: This stop is located in the small town of Custer, SD where there are water and restroom amenities. Also, restuarants and shops are within walking distances if you are interested in exploring further scenes of the Black Hills.</p>' +
-				'</div>'
-			var custerInfoWindow = new google.maps.InfoWindow({
-				content: custerInfoContent
-			});
-			google.maps.event.addListener(custerMarker,'click', function() {
-				custerInfoWindow.open(map,custerMarker);
-				});
-
-			var hillcityInfoContent = '<div class="infoBox">' +
-				'<p> Hill City Trailhead: This stop is located in the small town of Hill City, SD where there are water and restroom amenities. Once again, restaurants and shops are within walking distance as well as the popular 1880 Train attraction that people of all ages can enjoy.</p>' +
-				'</div>'
-			var hillcityInfoWindow = new google.maps.InfoWindow({
-				content: hillcityInfoContent
-			});
-			google.maps.event.addListener(hillcityMarker,'click', function() {
-				hillcityInfoWindow.open(map,hillcityMarker);
-				});
-
-			var leadInfoContent = '<div class="infoBox">' +
-				'<p>Lead Trailhead: This stop is located in the town of Lead, SD where there are water and restroom amenities. The historic town of Lead is the home of the Homestake Mine that was once the largest and deepest mining operation in the United States.</p>' +
-				'</div>'
-			var leadInfoWindow = new google.maps.InfoWindow({
-				content: leadInfoContent
-			});
-			google.maps.event.addListener(leadMarker,'click', function() {
-				leadInfoWindow.open(map,leadMarker);
-				});
-
-			var deadwoodInfoContent = '<div class="infoBox">' +
-				'<p>Deadwood Trailhead: The end of the Mickelson Trail. The final stop of the Mickelson Trail is in the historic town of Deadwood, SD. Here there are restaurants and shops, as well as casinos to play in after the long but beautiful ride through the Black Hills.</p>' +
-				'</div>'
-			var deadwoodInfoWindow = new google.maps.InfoWindow({
-				content: deadwoodInfoContent
-			});
-			google.maps.event.addListener(deadwoodMarker,'click', function() {
-				deadwoodInfoWindow.open(map,deadwoodMarker);
+			google.maps.event.addListener(collegeofcharlestonMarker,'click', function() {
+				collegeofcharlestonInfoWindow.open(map,collegeofcharlestonMarker);
 				});
 
 
