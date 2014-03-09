@@ -46,6 +46,23 @@
                     	infowindow.open(map, marker);
                     });
             }
+            	var maker = new google.maps.Marker({
+            		position: new google.maps.LatLng(32.827231, 79.833183),
+            		map: map,
+            		title: 'Point of Interest'
+            	
+            	});
+            	
+            	var infowindow = new google.maps.InfoWindow({
+            		content: 'Mt. Pleasant'
+            		
+            	});
+            	
+            	google.maps.event.addListener(marker, 'click', function() {
+            		infowindow.open(map, marker);
+            	
+            	});
+            	}
         </script>
     </head>
     
