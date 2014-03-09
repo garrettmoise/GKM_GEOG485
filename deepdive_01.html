@@ -30,13 +30,13 @@
                     document.getElementById("map_canvas"), 
                     myOptions);
                     
-                    var marker = new google.maps.Marker({
+                    var collegeofcharlestonmarker = new google.maps.Marker({
                     	position: new google.maps.LatLng(32.783747, -79.937103),
                     	map: map,
                     	title: 'Point of Interest'
                     });
                     
-                    var infowindow = new google.maps.InfoWindow({
+                    var collegeofcharlestoninfowindow = new google.maps.InfoWindow({
                     	content: 'The College of Charleston'
                     });
                     
@@ -44,14 +44,14 @@
                     	infowindow.open(map, marker);
                     });
                     
-                    var marker = new google.maps.Marker({
+                    var mtpleasantmarker = new google.maps.Marker({
                     	position: new google.maps.LatLng(32.827231, -79.833183),
                     	map: map,
                     	title: 'Point of Interest'
                     });
                     
-                    var infowindow = new google.maps.InfoWindow({
-                    	content: 'The College of Charleston'
+                    var mtpleasantinfowindow = new google.maps.InfoWindow({
+                    	content: 'Mt. Pleasant'
                     });
                     
                     google.maps.event.addListener(marker, 'click', function() {
