@@ -19,6 +19,21 @@
 	<p>The GetCapabilities request returns an XML file that provides the capabilities of the service.</p>
 	<h2>Question 3</h2>
 	<h4>What are the required parameters, and what do they represent? What is returned in response to a WMS GetMap request? What is the significance of transparency in WMS requests?</h4>
+	<p>
+	<ul>
+	<li>VERSION=version</li>
+	<li>REQUEST=GetMap</li>
+	<li>LAYERS=layer_list</li>
+	<li>STYLES=style_list</li>
+	<li>SRS=namespace:identifier</li>
+	<li>BBOX=minx,miny,maxx,maxy</li>
+	<li>WIDTH=output_width</li>
+	<li>HEIGHT=output_height</li>
+	<li>FORMAT=output_format</li>
+	</ul>
+	</p>
+	<p>It will return "Map Images", which are graphic files representing layers from a WMS Service.  If the bounding box is incorrect all you will recieve is a blank page.</p>
+	<p>Transparency allows for the viewing of multiple layers at the same time. If this is not allowed then only the top layer will be present and it will block the layers lower and inside.</p>
 	<h2>Question 4</h2>
 	<h4>What OGC request would you use to inform the configuration of a client application (like ArcGIS) about an OGC service that you want to add layers from? Which OGC request would you submit under the following circumstances (include both the service type [e.g. WMS, WFS, WCS], and the request [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</h4>
 	<h2>Question 5</h2>
