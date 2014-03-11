@@ -14,11 +14,11 @@
 	<h4>What request type is common across all three (WMS, WFS, WCS) OGC web services that we have learned about?</h4>
 	<p>"GetCapabilities" is common across all three (WMS,WFS,WCS) OGC web services that we have studied.</p>
 	<h2>Question 2</h2>
-	<h4>What are the required parameters, and what do they represent? What is returned in response to a WMS GetCapabilities request?</h4>
-	<p>The required parameters are "SERVICE=WMS" and "REQUEST=GetCapabilities" and they represent "service type" and "request name".</p>
-	<p>The GetCapabilities request returns an XML file that provides the capabilities of the service.</p>
+	<h4>2.1 What are the required parameters, and what do they represent? 2.2 What is returned in response to a WMS GetCapabilities request?</h4>
+	<p>2.1: The required parameters are "SERVICE=WMS" and "REQUEST=GetCapabilities" and they represent "service type" and "request name".</p>
+	<p>2.2: The GetCapabilities request returns an XML file that provides the capabilities of the service.</p>
 	<h2>Question 3</h2>
-	<h4>What are the required parameters, and what do they represent? What is returned in response to a WMS GetMap request? What is the significance of transparency in WMS requests?</h4>
+	<h4>What are the required parameters, and what do they represent? 3.2 What is returned in response to a WMS GetMap request? 3.3 What is the significance of transparency in WMS requests?</h4>
 	<p>
 	<ul>
 	<li>VERSION=version</li>
@@ -32,14 +32,20 @@
 	<li>FORMAT=output_format</li>
 	</ul>
 	</p>
-	<p>It will return "Map Images", which are graphic files representing layers from a WMS Service.  If the bounding box is incorrect all you will recieve is a blank page.</p>
-	<p>Transparency allows for the viewing of multiple layers at the same time. If this is not allowed then only the top layer will be present and it will block the layers lower and inside.</p>
+	<p>3.2: It will return "Map Images", which are graphic files representing layers from a WMS Service.  If the bounding box is incorrect all you will recieve is a blank page.</p>
+	<p>3.3: Transparency allows for the viewing of multiple layers at the same time. If this is not allowed then only the top layer will be present and it will block the layers lower and inside.</p>
 	<h2>Question 4</h2>
 	<h4>What OGC request would you use to inform the configuration of a client application (like ArcGIS) about an OGC service that you want to add layers from?</h4>
 	<p>The "GetCapabilites" request is used to inform the configuration of a client application (like ArcGIS) about an OGC service that you could add layers from.</p>
 		<h2>Question 5- Which OGC request would you submit under the following circumstances (include both the service type [e.g. WMS, WFS, WCS], and the request [e.g. GetMap, GetCapabilities, GetCoverage, etc.] in your answer)</h2>
-	<h4>You want a map image representing three layers of data in a single JPEG for a specified area of interest. You want to retrieve data representing geometries and associated attributes for a road network, with the returned data in GML. You want to retrieve data representing a digital elevation model (a raster dataset) in the form of a GeoTIFF.</h4>
+	<h4>5.1 You want a map image representing three layers of data in a single JPEG for a specified area of interest. 5.2 You want to retrieve data representing geometries and associated attributes for a road network, with the returned data in GML. 5.3 You want to retrieve data representing a digital elevation model (a raster dataset) in the form of a GeoTIFF.</h4>
+	<p>5.1: WMS GetMap request.</p>
+	<p>5.2: WFS GetFeature request.</p>
+	<p>5.3: WCS GetCoverage request.</p>
 	<h2>Question 6</h2>
-	<h4>What are the EPSG codes of the following Spatial Reference Systems: WGS 84 (Geodetic CRS [geographic 2d]), NAD83 / UTM zone 13N, NAD27 / UTM zone 13N</h4>
+	<h4>What are the EPSG codes of the following Spatial Reference Systems: 6.1 WGS 84 (Geodetic CRS [geographic 2d]), 6.2 NAD83 / UTM zone 13N, 6.3 NAD27 / UTM zone 13N</h4>
+	<p>6.1: EPSG:4326.</p>
+	<p>6.2: EPSG:26913.</p>
+	<p>6.3: EPSG:26713.</p>
 	</body>
 </html>
