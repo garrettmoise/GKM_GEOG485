@@ -37,12 +37,12 @@
 		the spatial extent of the datasets that you downloaded in UTM Zone 13N, NAD27.
 		Paste the input and output of the command(s) into your writeup.</h2>
 	<h4>Vegetation Data for NM</h4>
-	<p>c:\>cs2cs +init="EPSG:2258" +to +init="EPSG:26713"</p>
+	<p>cs2cs +proj=latlong +datum=WGS84 +to +proj=utm +zone=13 +datum=NAD83 -r</p>
 	<p>37.001747 -102.998901
 	   678055.92    4096937.95 0.00
 	</p>
 	<h4>NM known mineral deposit areas</h4>
-	<p>c:\>cs2cs +init="EPSG:2258" +to +init="EPSG:26713"</p>
+	<p>cs2cs +proj=latlong +datum=WGS84 +to +proj=utm +zone=13 +datum=NAD83 -r</p>
 	<p>36.940117 -103.170486
 	   662918.29    4089792.89 0.00
 	</p>
