@@ -37,10 +37,10 @@
 	<p>Projection: Transverse Mercator & NAD83 NM Central</p>
 	<p>Spatial Extent
 		<br>
-		Upper Left (106d37'19.72"W, 35d 2'39.90"N)<br>
-		Lower Left (106d37'19.48"W, 35d 1'46.10"N)<br>
-		Upper Right (106d36'14.63"W, 35d 2'40.10"N)<br>
-		Lower Right (106d36'14.40"W, 35d 1'46.30"N)
+		Upper Left (-106.371972, 35.23990)<br>
+		Lower Left (-106.371948, 35.14610)<br>
+		Upper Right (-106.361463, 35.24010)<br>
+		Lower Right (-106.361440, 35.14630)
 	</p>
 	<p>Pixel Resolution: 2 pixels per inch</p>
 	<h4>NM known mineral deposit areas</h4>
@@ -52,13 +52,23 @@
 		Paste the input and output of the command(s) into your writeup.</h2>
 	<h4>Vegetation Data for NM</h4>
 	<p>cs2cs +proj=latlong +datum=WGS84 +to +proj=utm +zone=13 +datum=NAD83 -r</p>
-	<p>37.001747 -102.998901
+	<p>37.001747 -102.998901<br>
 	   678055.92    4096937.95 0.00
 	</p>
+	<h4>Albuquerque East 7.5 Minute Quad, Sector N16</h4>
+	<p>cs2cs +proj=latlong +datum=WGS84 +to +proj=utm +zone=13 +datum=NAD83 -r</p>
+	<p>	35.23990, -106.371972<br>
+		119530.51	3435705.77 0.00<br>
+		35.14610, -106.371948<br>
+		119530.51	3435705.77 0.00<br>
+		35.24010, -106.361463<br>
+		119530.51	3435705.77 0.00<br>
+		35.14630, -106.361440<br>
+		119530.51	3435705.77 0.00</p>
 	<h4>NM known mineral deposit areas</h4>
 	<p>cs2cs +proj=latlong +datum=WGS84 +to +proj=utm +zone=13 +datum=NAD83 -r</p>
-	<p>36.940117 -103.170486
-	   662918.29    4089792.89 0.00
+	<p>36.940117 -103.170486<br>
+	   662918.2	4089792.89 0.00
 	</p>
 	
 	</body>
