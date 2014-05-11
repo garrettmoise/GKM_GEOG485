@@ -82,25 +82,7 @@
 			// Key Coordinates (Geometries)
 			var Coord_classroom = new OpenLayers.Geometry.Point(-80.672441,32.445258);
     		var Coord_office = new OpenLayers.Geometry.Point(-80.685986,32.438135);
-    		var Coord_building = new OpenLayers.Geometry.LinearRing([
-    			new OpenLayers.Geometry.Point(-106.624921,35.084498),
-     			new OpenLayers.Geometry.Point(-106.624911,35.084558 ),
-    			new OpenLayers.Geometry.Point(-106.624970, 35.084566),
-    			new OpenLayers.Geometry.Point(-106.624966, 35.084609),
-    			new OpenLayers.Geometry.Point(-106.624383, 35.084544),
-    			new OpenLayers.Geometry.Point(-106.624317, 35.084438),
-    			new OpenLayers.Geometry.Point(-106.623922, 35.084384),
-    			new OpenLayers.Geometry.Point(-106.623970, 35.084164),
-    			new OpenLayers.Geometry.Point(-106.624324, 35.084214),
-    			new OpenLayers.Geometry.Point(-106.624324, 35.084214),
-    			new OpenLayers.Geometry.Point(-106.624284, 35.084391),
-   			]);
-   			var Coord_buildingPath = new OpenLayers.Geometry.LineString([
-   				Coord_classroom,
-     			new OpenLayers.Geometry.Point(-106.624308,35.084309),
-				new OpenLayers.Geometry.Point(-106.624327,35.084445),
-     			Coord_office   				
-   			])
+
     		
     		// Corresponding Features
     		var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom,null,myRedPointStyle);
