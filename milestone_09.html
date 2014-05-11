@@ -1,3 +1,5 @@
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
@@ -6,123 +8,188 @@
         // define global variables
         var lon = -80.676041;
         var lat = 32.439362;
-        var zoom = 10;
+        var zoom = 12;
         var myProjection = new OpenLayers.Projection("EPSG:4326")
         var map;
+        var Layers = new Object();
         var bmngLayer, countiesLayer, indlandLayer, federallandsLayer;
 
         // =============== Initialization function ===================
         function init(){
              
             map = new OpenLayers.Map('map',
-            	{projection:myProjection}
-            );
+            	{
+            		numZoomLevels: 20 // default=16
+            	});
             
-
 			// =========== USGS National Map WMS ====== 
 
             // from http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS
-			usImagery = new OpenLayers.Layer.WMS( 
+			Layers.usImagery = new OpenLayers.Layer.WMS( 
             	"US Imagery Tile Service - USGS", 
             	"http://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WmsServer?",
             	{layers: "0", version: '1.3.0', transparent: 'TRUE'},
             	{isBaseLayer: true}
             );
-            map.addLayer(usImagery)
-            
-			// from http://services.nationalmap.gov/ArcGIS/services/TNM_Blank_US/MapServer/WMSServer?request=GetCapabilities&service=WMS
-            
-            countriesLayer = new OpenLayers.Layer.WMS( 
-            	"Global Countries and Oceans", 
-            	"http://services.nationalmap.gov/arcgis/services/TNM_Blank_US/MapServer/WmsServer?",
-            	{layers: "2,3,5,8,9,11,15,16,18,22,23,25", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: true}
-            );
-            map.addLayer(countriesLayer)
-
-			globalLabelsLayer = new OpenLayers.Layer.WMS( 
-            	"Global Labels", 
-            	"http://services.nationalmap.gov/arcgis/services/TNM_Blank_US/MapServer/WmsServer?",
-            	{layers: "12,19,26", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: false, singleTile: true, visibility: false}
-            );
-            map.addLayer(globalLabelsLayer)
-            
- 			// =========== GEBCO Grid =================
-			gebcoLayer = new OpenLayers.Layer.WMS( 
-            	"General Bathymetric Chart of the Oceans (GEBCO)", 
-            	"http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?",
-            	{layers: "GEBCO_08_Grid", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: true}
-            );
-            map.addLayer(gebcoLayer)
-            
-           
-            
-// 			=========== NASA Earth Observations WMS (non-responsive) =====
-// 				from http://neowms.sci.gsfc.nasa.gov/wms/wms?version=1.3.0&service=WMS&request=GetCapabilities
-//             globalImageryLayer = new OpenLayers.Layer.WMS( 
-//             	"Global Imagery - Blue Marble NG", 
-//             	"http://neowms.sci.gsfc.nasa.gov/wms/wms",
-//             	{layers: "BlueMarbleNG", version: '1.3.0', transparent: 'TRUE'},
-//             	{isBaseLayer: true}
-//             );
-//             map.addLayer(globalImageryLayer)
-//             
-//             globalImageryTBLayer = new OpenLayers.Layer.WMS( 
-//             	"Global Imagery - Blue Marble NG w. Topography and Bathymetry", 
-//             	"http://neowms.sci.gsfc.nasa.gov/wms/wms",
-//             	{layers: "BlueMarbleNG-TB", version: '1.3.0', transparent: 'TRUE'},
-//             	{isBaseLayer: true}
-//             );
-//             map.addLayer(globalImageryTBLayer)
+            map.addLayer(Layers.usImagery)
 
 
-            // =========== USGS National Atlas WMS ====
+			// =========== Create and add a Vector layer to the map that that will contain the created features ====
+    		Layers.localFeatures = new OpenLayers.Layer.Vector('My Local Features');
+    		map.addLayer(Layers.localFeatures);
 
-            // from USGS National Atlas: http://webservices.nationalatlas.gov/wms/boundaries?SERVICE=WMS&REQUEST=GetCapabilities
-            countiesLayer = new OpenLayers.Layer.WMS( 
-            	"US Counties", 
-            	"http://webservices.nationalatlas.gov/wms?",
-            	{layers: "counties", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: false, visibility: false, opacity: .8}
-            );
-            map.addLayer(countiesLayer);
 			
-            indlanLayer = new OpenLayers.Layer.WMS( 
-            	"Indian Lands", 
-            	"http://webservices.nationalatlas.gov/wms?",
-            	{layers: "indlan", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: false, visibility: false, opacity: .5}
-            );
-            map.addLayer(indlanLayer);
+			// =========== Create Some Styles ==============
+			// Define some Styles
+    		myRedPointStyle = {
+    			pointRadius: 12, 
+    			fillColor: "#CC0000",
+    			fillOpacity: .5,
+    			strokeOpacity: .5}
+
+    		myCountiesStyle = {
+    			fillColor: "#ffffff",
+    			fillOpacity: .2,
+    			strokeOpacity: .5,
+    			strokeColor: "#ffffff"}
+
+    		myStatesStyle = {
+    			fillColor: "#0000ff",
+    			fillOpacity: .2,
+    			strokeOpacity: .5,
+    			strokeColor: "#0000ff"}
+
+    		myCitiesStyle = {
+    			fillColor: "#00ff00",
+    			fillOpacity: .2,
+    			strokeOpacity: .5,
+    			strokeColor: "#00ff00"}
+
+    		myBuildingStyle = {
+    			fillColor: "#88ff00",
+    			fillOpacity: .2,
+    			strokeOpacity: .5,
+    			strokeColor: "#88ff00"}
+
+    		myPathStyle = {
+    			strokeOpacity: .8,
+    			strokeColor: "#880088",
+    			strokeWidth: 2}
+
+
+			// =========== Create Some Geometries & Features ==============
+
+			// Key Coordinates (Geometries)
+			var Coord_classroom = new OpenLayers.Geometry.Point(-106.624073,35.084280);
+    		var Coord_office = new OpenLayers.Geometry.Point(-106.624899,35.084506);
+    		var Coord_building = new OpenLayers.Geometry.LinearRing([
+    			new OpenLayers.Geometry.Point(-106.624921,35.084498),
+     			new OpenLayers.Geometry.Point(-106.624911,35.084558 ),
+    			new OpenLayers.Geometry.Point(-106.624970, 35.084566),
+    			new OpenLayers.Geometry.Point(-106.624966, 35.084609),
+    			new OpenLayers.Geometry.Point(-106.624383, 35.084544),
+    			new OpenLayers.Geometry.Point(-106.624317, 35.084438),
+    			new OpenLayers.Geometry.Point(-106.623922, 35.084384),
+    			new OpenLayers.Geometry.Point(-106.623970, 35.084164),
+    			new OpenLayers.Geometry.Point(-106.624324, 35.084214),
+    			new OpenLayers.Geometry.Point(-106.624324, 35.084214),
+    			new OpenLayers.Geometry.Point(-106.624284, 35.084391),
+   			]);
+   			var Coord_buildingPath = new OpenLayers.Geometry.LineString([
+   				Coord_classroom,
+     			new OpenLayers.Geometry.Point(-106.624308,35.084309),
+				new OpenLayers.Geometry.Point(-106.624327,35.084445),
+     			Coord_office   				
+   			])
+    		
+    		// Corresponding Features
+    		var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom,null,myRedPointStyle);
+    		var Point_office = new OpenLayers.Feature.Vector(Coord_office);
+    		var LinearRing_building = new OpenLayers.Feature.Vector(Coord_building, null, myBuildingStyle);
+    		var LineString_buildingPath = new OpenLayers.Feature.Vector(Coord_buildingPath, null, myPathStyle);
+    		
+    		Layers["localFeatures"].addFeatures([Point_classroom, Point_office, LinearRing_building, LineString_buildingPath]);
+    		
 			
-            federallandsLayer = new OpenLayers.Layer.WMS( 
-            	"US Federal Lands", 
-            	"http://webservices.nationalatlas.gov/wms?",
-            	{layers: "federallands", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: false, visibility: false, opacity: .5}
-            );
-            map.addLayer(federallandsLayer);
+			
+			// =========== KML Layer Addition ===============
+			Layers.states = new OpenLayers.Layer.Vector("KML - States", {
+                projection: map.displayProjection,
+                visibility: false,
+                style: myStatesStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://kkb-web.s3.amazonaws.com/data/tl_2010_35_state10.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.states)	
+           		
+			Layers.counties = new OpenLayers.Layer.Vector("KML - Counties", {
+                projection: map.displayProjection,
+                visibility: false,
+                style: myCountiesStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://kkb-web.s3.amazonaws.com/data/NMCounties.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.counties)		
+			            
+			Layers.cities = new OpenLayers.Layer.Vector("KML - Cities", {
+                projection: map.displayProjection,
+                visibility: false,
+                style:  myCitiesStyle,
+                strategies: [new OpenLayers.Strategy.Fixed()],
+                protocol: new OpenLayers.Protocol.HTTP({
+                    url: "http://kkb-web.s3.amazonaws.com/data/NMCities.kml",
+                    format: new OpenLayers.Format.KML({
+                        extractAttributes: true
+                    })
+                })
+            });
+           	map.addLayer(Layers.cities)		
+			            
+			            
 			
 			map.setCenter(
                 new OpenLayers.LonLat(lon, lat), zoom
             );
 
             map.addControl(new OpenLayers.Control.LayerSwitcher() );
-            map.addControl(new OpenLayers.Control.Scale() );
-                
+            map.addControl(new OpenLayers.Control.MousePosition() );
+               
         }
         // =============== End of Initialization Function ============
         
 	</script>
 	<style type="text/css">
 		#map {width:800px; height:500px}
+		.olControlAttribution {
+			font-size: smaller; 
+			left: 3px !important; 
+			bottom: 5px !important; 
+			position: absolute;
+			background-color: rgba(189,192,191,0.5);
+			padding: 2px 5px;
+		}
+		.olControlMousePosition {
+			right: 3px;
+			position: absolute;
+			font-size: smaller;
+			padding: 2px 5px;
+			background-color: rgba(189,192,191,0.5);
+			bottom: 5px !important}
 	</style>
   </head>
   <body onload="init()">
     <h1>Basic OpenLayers Map</h1>
-    <p>Shows the basic use of OpenLayers with a set of WMS layers</p>
+    <p>Shows the basic use of OpenLayers with a set of WMS layers with vector overlays and KML layers</p>
 	
 	<!-- Map DIV -->
 	<div id="map"></div>
