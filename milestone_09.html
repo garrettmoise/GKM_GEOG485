@@ -39,9 +39,9 @@
 			
 			// =========== Create Some Styles ==============
 			// Define some Styles
-    		myRedPointStyle = {
+    		myBluePointStyle = {
     			pointRadius: 12, 
-    			fillColor: "#CC0000",
+    			fillColor: "#007fff",
     			fillOpacity: .5,
     			strokeOpacity: .5}
 
@@ -79,12 +79,12 @@
 
 			// Key Coordinates (Geometries)
 			var Coord_classroom = new OpenLayers.Geometry.Point(-80.672441,32.445258);
-    	var Coord_office = new OpenLayers.Geometry.Point(-80.685986,32.438135);
-      var Coord_huntingbeach = new OpenLayers.Geometry.Point(-80.445843,32.358571);
+    			var Coord_office = new OpenLayers.Geometry.Point(-80.685986,32.438135);
+      			var Coord_huntingbeach = new OpenLayers.Geometry.Point(-80.445843,32.358571);
 		
    		// Corresponding Features
    		var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom,null,myRedPointStyle);
-   		var Point_office = new OpenLayers.Feature.Vector(Coord_office);
+   		var Point_office = new OpenLayers.Feature.Vector(Coord_office,null,myRedPointStyle);
    		var Point_huntingbeach = new OpenLayers.Feature.Vector(Coord_huntingbeach,null,myRedPointStyle);
   		
     		Layers["localFeatures"].addFeatures([Point_classroom, Point_office, Point_huntingbeach]);
