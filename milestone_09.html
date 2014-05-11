@@ -240,50 +240,6 @@
     var LinearRing_SantaBarbaraHarbor = new OpenLayers.Feature.Vector(Coord_SantaBarbaraHarbor, null, Harbor_style);
 
     Layers["Harbor"].addFeatures([LinearRing_SantaBarbaraHarbor]);
-
-// ===== KML Layers =====
-
-    Layers.SantaBarbaraChannel = new OpenLayers.Layer.Vector("KML - Santa Barbara Channel", {
-                projection: map.displayProjection,
-                visibility: true,
-                style: SBC_style,
-                strategies: [new OpenLayers.Strategy.Fixed()],
-                protocol: new OpenLayers.Protocol.HTTP({
-                    url: "http://lpa2.github.io/GEOG485L/XML/milestone_09_SBC.kml",
-                    format: new OpenLayers.Format.KML({
-                        extractAttributes: false
-                    })
-                })
-            });
-           	map.addLayer(Layers.SantaBarbaraChannel)
-
-    Layers.SantaBarbaraHalfMarathon = new OpenLayers.Layer.Vector("KML - Santa Barbara Half Marathon", {
-                projection: map.displayProjection,
-                visibility: true,
-                style: SBHM_style,
-                strategies: [new OpenLayers.Strategy.Fixed()],
-                protocol: new OpenLayers.Protocol.HTTP({
-                    url: "http://lpa2.github.io/GEOG485L/XML/milestone_09_SBHM.kml",
-                    format: new OpenLayers.Format.KML({
-                        extractAttributes: true
-                    })
-                })
-            });
-           	map.addLayer(Layers.SantaBarbaraHalfMarathon)
-
-// ===== WMS Layer =====
-
-    Layers.wms = new OpenLayers.Layer.WMS("WMS - NASA Global Mosaic",
-      "http://wms.jpl.nasa.gov/wms.cgi",
-      {
-      layers: "modis,global_mosaic",
-      transparent: true
-      }, {
-      opacity: 0.5,
-      singleTile: true
-    });
-    map.addLayer(Layers.wms)
-
 }
 
         <!-- Initialization End -->
