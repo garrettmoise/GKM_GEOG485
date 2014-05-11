@@ -36,7 +36,7 @@
     		Layers.localFeatures = new OpenLayers.Layer.Vector('My Local Features');
     		map.addLayer(Layers.localFeatures);
 
-
+			
 			// =========== Create Some Styles ==============
 			// Define some Styles
     		myRedPointStyle = {
@@ -79,19 +79,18 @@
 
 			// Key Coordinates (Geometries)
 			var Coord_classroom = new OpenLayers.Geometry.Point(-80.672441,32.445258);
-			var Coord_huntingbeach = new OpenLayers.Geometry.Point(-80.445843,32.358571);
-    		var Coord_office = new OpenLayers.Geometry.Point(-80.685986,32.438135);
-  
-    		
-    		// Corresponding Features
-    		var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom,null,myRedPointStyle);
-    		var Point_huntingbeach = new OpenLayers.Feature.Vector(Coord_huntingbeach,null,myRedPointStyle);
-    		var Point_office = new OpenLayers.Feature.Vector(Coord_office);
-    		
-    		Layers["localFeatures"].addFeatures([Point_classroom, Point_huntingbeach, Point_office);
-    		
-
-
+    	var Coord_office = new OpenLayers.Geometry.Point(-80.685986,32.438135);
+      var Coord_huntingbeach = new OpenLayers.Geometry.Point(-80.445843,32.358571);
+		
+   		// Corresponding Features
+   		var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom,null,myRedPointStyle);
+   		var Point_office = new OpenLayers.Feature.Vector(Coord_office);
+   		var Point_huntingbeach = new OpenLayers.Feature.Vector(Coord_huntingbeach,null,myRedPointStyle);
+  		
+    		Layers["localFeatures"].addFeatures([Point_classroom, Point_office, Point_huntingbeach]);
+		
+			
+			
 			// =========== KML Layer Addition ===============
 			Layers.states = new OpenLayers.Layer.Vector("KML - States", {
                 projection: map.displayProjection,
@@ -120,7 +119,7 @@
                 })
             });
            	map.addLayer(Layers.counties)		
-
+			            
 			Layers.cities = new OpenLayers.Layer.Vector("KML - Cities", {
                 projection: map.displayProjection,
                 visibility: false,
@@ -134,9 +133,9 @@
                 })
             });
            	map.addLayer(Layers.cities)		
-
-
-
+			            
+			            
+			
 			map.setCenter(
                 new OpenLayers.LonLat(lon, lat), zoom
             );
@@ -170,9 +169,9 @@
   <body onload="init()">
     <h1>Basic OpenLayers Map</h1>
     <p>Shows the basic use of OpenLayers with a set of WMS layers with vector overlays and KML layers</p>
-
+	
 	<!-- Map DIV -->
 	<div id="map"></div>
-
+	
   </body>
 </html>
