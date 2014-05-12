@@ -99,7 +99,6 @@
 			Layers.states = new OpenLayers.Layer.Vector("KML - States", {
                 projection: map.displayProjection,
                 visibility: false,
-                style: myStatesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
                     url: "http://banks.cmac.ws/SC/Beaufort.kml",
