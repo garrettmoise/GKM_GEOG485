@@ -81,13 +81,15 @@
 			var Coord_classroom = new OpenLayers.Geometry.Point(-80.672441,32.445258);
     			var Coord_office = new OpenLayers.Geometry.Point(-80.685986,32.438135);
       			var Coord_huntingbeach = new OpenLayers.Geometry.Point(-80.445843,32.358571);
+      			var Coord_PortRoyal = new OpenLayers.Geometry.Point(-80.692863,32.386476);
 		
    		// Corresponding Features
    		var Point_classroom = new OpenLayers.Feature.Vector(Coord_classroom,null,myBluePointStyle);
    		var Point_office = new OpenLayers.Feature.Vector(Coord_office,null,myBluePointStyle);
    		var Point_huntingbeach = new OpenLayers.Feature.Vector(Coord_huntingbeach,null,myBluePointStyle);
+   		var Point_PortRoyal = new OpenLayers.Feature.Vector(Coord_PortRoyal,null,myBluePointStyle);
   		
-    		Layers["localFeatures"].addFeatures([Point_classroom, Point_office, Point_huntingbeach]);
+    		Layers["localFeatures"].addFeatures([Point_classroom, Point_office, Point_huntingbeach, Point_PortRoyal]);
 		
 			
 			
