@@ -44,6 +44,12 @@
     			fillColor: "#007fff",
     			fillOpacity: .5,
     			strokeOpacity: .5}
+    			
+    		myBankPointStyle = {
+    			pointRadius: 8,
+    			fillColor: "#fdee00",
+    			fillOpacity: .5,
+    			strokeOpacity: .5}
 
     		myCountiesStyle = {
     			fillColor: "#ffffff",
@@ -96,9 +102,10 @@
 			
 			
 			// =========== KML Layer Addition ===============
-			Layers.states = new OpenLayers.Layer.Vector("KML - States", {
+			Layers.states = new OpenLayers.Layer.Vector("KML - Banks", {
                 projection: map.displayProjection,
                 visibility: false,
+                style: myBankPointStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
                     url: "http://banks.cmac.ws/SC/Beaufort.kml",
