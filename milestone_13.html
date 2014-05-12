@@ -39,13 +39,13 @@
 
 
 
-		Layers.2007_07_26_nm_eoc = new OpenLayers.Layer.WMS( 
-            	"Emergency Operations Center", 
+		Layers.2008_09_19_nm_firestations = new OpenLayers.Layer.WMS( 
+            	"Firestations in New Mexico", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "2007_07_26_nm_eoc", styles: 'Red_black_eoc', version: '1.1.1', transparent: 'true'},
+            	{layers: "2008_09_19_nm_firestations", styles: 'firestation', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.2007_07_26_nm_eoc)
+            map.addLayer(Layers.2008_09_19_nm_firestations)
 
 
 
