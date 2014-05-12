@@ -102,13 +102,13 @@
 			
 			
 			// =========== KML Layer Addition ===============
-			Layers.states = new OpenLayers.Layer.Vector("KML - Banks", {
+			Layers.states = new OpenLayers.Layer.Vector("KML - New Mexico State", {
                 projection: map.displayProjection,
                 visibility: false,
-                style: myBankPointStyle,
+                style: myStatesStyle,
                 strategies: [new OpenLayers.Strategy.Fixed()],
                 protocol: new OpenLayers.Protocol.HTTP({
-                    url: "http://banks.cmac.ws/SC/Beaufort.kml",
+                    url: "http://kkb-web.s3.amazonaws.com/data/tl_2010_35_state10.kml",
                     format: new OpenLayers.Format.KML({
                         extractAttributes: true
                     })
