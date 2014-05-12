@@ -55,25 +55,8 @@
             	{layers: "gm_2008_09_19_nm_firestations", styles: 'firestation', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.gm_2008_09_19_nm_firestations)
+            map.addLayer(Layers.gm_2008_09_19_nm_firestations);
 
-
-
-		Layers.volcanoes = new OpenLayers.Layer.WMS( 
-            	"Volcanoes", 
-            	"http://geog485.unm.edu:8080/geoserver/s_jjohnso1/ows?",
-            	{layers: "volcanx020", styles: 'RedPoint', version: '1.1.1', transparent: 'true'},
-            	{isBaseLayer: false, visibility: false}
-            );
-            map.addLayer(Layers.volcanoes)
-            
-           lslideLayer = new OpenLayers.Layer.WMS( 
-            	"Landslide Incidence and Susceptibility (Original WMS)", 
-            	"http://webservices.nationalatlas.gov/wms/geology?",
-            	{layers: "lslide", version: '1.3.0', transparent: 'TRUE'},
-            	{isBaseLayer: false, visibility: false}
-            );
-            map.addLayer(lslideLayer);
             
   	
            			
