@@ -1,9 +1,8 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-	
-	
+
+
 <head>
 	<title>Milestone #13</title>
     <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
@@ -37,29 +36,29 @@
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.nmranges)
-			
-			
-		
-		Layers.firestations = new OpenLayers.Layer.WMS( 
-            	"Firestations in New Mexico", 
+
+
+
+		Layers.costlylslides = new OpenLayers.Layer.WMS( 
+            	"Costly Landslides", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "2008_09_19_nm_firestations", styles: 'firestation', version: '1.1.1', transparent: 'true'},
+            	{layers: "landslx020", styles: 'LslidePoint', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.firestations)
-			
-			
-			
-		Layers.2007_07_26_nm_eoc = new OpenLayers.Layer.WMS( 
-            	"Emergency Operation Centers NM", 
+            map.addLayer(Layers.costlylslides)
+
+
+
+		Layers.quakes = new OpenLayers.Layer.WMS( 
+            	"Earthquakes", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "2007_07_26_nm_eoc", styles: 'Red_black_eoc', version: '1.1.1', transparent: 'true'},
+            	{layers: "quksigx020", styles: 'BluePoint', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.2007_07_26_nm_eoc)
-			
-			
-			
+            map.addLayer(Layers.quakes)
+
+
+
 		Layers.volcanoes = new OpenLayers.Layer.WMS( 
             	"Volcanoes", 
             	"http://geog485.unm.edu:8080/geoserver/s_jjohnso1/ows?",
@@ -118,10 +117,10 @@
 	<li>Costly Landslides - Shows the points of all landslides accross the country that were costly incidents - Represented by green triangles.</li>	
 	</ul>
 	<div id="map"></div>
-		
+
 	</body>
-	
-	
+
+
 		<FORM METHOD="LINK" ACTION="http://garrettmoise.github.io/GKM_GEOG485/index.html">
 <INPUT TYPE="submit" VALUE="Back to Home">
 </FORM>
