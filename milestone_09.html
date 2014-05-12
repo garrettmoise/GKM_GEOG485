@@ -20,12 +20,9 @@
             		numZoomLevels: 20 // default=16
             	});
             
-			// =========== USGS National Map WMS ====== 
-
-            // from http://basemap.nationalmap.gov/ArcGIS/services/USGSImageryTopo/MapServer/WMSServer?request=GetCapabilities&service=WMS
 			Layers.usImagery = new OpenLayers.Layer.WMS( 
-            	"US Imagery Only - USGS", 
-            	"http://basemap.nationalmap.gov/arcgis/services/USGSImageryOnly/MapServer/WMSServer?",
+            	"US Imagery - USGS", 
+            	"http://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WMSServer?",
             	{layers: "0", version: '1.3.0', transparent: 'TRUE'},
             	{isBaseLayer: true}
             );
