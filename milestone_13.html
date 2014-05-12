@@ -49,13 +49,13 @@
 
 
 
-		Layers.quakes = new OpenLayers.Layer.WMS( 
-            	"Earthquakes", 
+		Layers.gm_2008_09_19_nm_firestations = new OpenLayers.Layer.WMS( 
+            	"Firestations in New Mexico", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "quksigx020", styles: 'BluePoint', version: '1.1.1', transparent: 'true'},
+            	{layers: "gm_2008_09_19_nm_firestations", styles: 'firestation', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.quakes)
+            map.addLayer(Layers.gm_2008_09_19_nm_firestations)
 
 
 
