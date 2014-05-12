@@ -40,23 +40,23 @@
 			
 			
 		
-		Layers.costlylslides = new OpenLayers.Layer.WMS( 
-            	"Costly Landslides", 
+		Layers.firestations = new OpenLayers.Layer.WMS( 
+            	"Firestations in New Mexico", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "landslx020", styles: 'LslidePoint', version: '1.1.1', transparent: 'true'},
+            	{layers: "2008_09_19_nm_firestations", styles: 'firestation', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.costlylslides)
+            map.addLayer(Layers.firestations)
 			
 			
 			
-		Layers.quakes = new OpenLayers.Layer.WMS( 
-            	"Earthquakes", 
+		Layers.2007_07_26_nm_eoc = new OpenLayers.Layer.WMS( 
+            	"Emergency Operation Centers NM", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "quksigx020", styles: 'BluePoint', version: '1.1.1', transparent: 'true'},
+            	{layers: "2007_07_26_nm_eoc", styles: 'Red_black_eoc', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.quakes)
+            map.addLayer(Layers.2007_07_26_nm_eoc)
 			
 			
 			
