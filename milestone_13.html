@@ -30,19 +30,19 @@
             );
             map.addLayer(Layers.usImagery)
             
-            Layers.lslide = new OpenLayers.Layer.WMS( 
-            	"Landslide Incidence and Susceptibility", 
-            	"http://geog485.unm.edu:8080/geoserver/s_jjohnso1/ows?",
-            	{layers: "lsoverp020", styles: 'NewPolygon', version: '1.1.1', transparent: 'true'},
+            Layers.nmranges = new OpenLayers.Layer.WMS( 
+            	"New Mexico Mountain Ranges", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "nmranges", styles: 'beigemountains', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.lslide)
+            map.addLayer(Layers.nmranges)
 			
 			
 		
 		Layers.costlylslides = new OpenLayers.Layer.WMS( 
             	"Costly Landslides", 
-            	"http://geog485.unm.edu:8080/geoserver/s_jjohnso1/ows?",
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
             	{layers: "landslx020", styles: 'LslidePoint', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
@@ -52,7 +52,7 @@
 			
 		Layers.quakes = new OpenLayers.Layer.WMS( 
             	"Earthquakes", 
-            	"http://geog485.unm.edu:8080/geoserver/s_jjohnso1/ows?",
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
             	{layers: "quksigx020", styles: 'BluePoint', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
