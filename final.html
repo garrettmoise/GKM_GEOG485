@@ -1,0 +1,189 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	
+<head>
+	<title>Final Exam</title>
+    <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript">
+      
+        var lon = -106.56947;
+        var lat = 35.06393;
+        var zoom = 12;
+        var myProjection = new OpenLayers.Projection("EPSG:4326")
+        var map;
+        var Layers = new Object();
+      
+        function init(){
+             
+            map = new OpenLayers.Map('map',
+            	{
+            		numZoomLevels: 20 
+            	});
+	   Layers.usImagery = new OpenLayers.Layer.WMS( 
+            	"US Imagery Tile Service - USGS", 
+            	"http://basemap.nationalmap.gov/arcgis/services/USGSImageryTopo/MapServer/WmsServer?",
+            	{layers: "0", version: '1.3.0', transparent: 'TRUE'},
+            	{isBaseLayer: true}
+            );
+            map.addLayer(Layers.usImagery)
+            
+            Layers.A5Cont = new OpenLayers.Layer.WMS( 
+            	"35106-A5_CONT", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "35106-A5_CONT", version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.A5Cont)
+			
+			
+		
+		Layers.A6Cont = new OpenLayers.Layer.WMS( 
+            	"35106-A6_CONT", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "35106-A6_CONT", version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.A6Cont)
+			
+			
+			
+		Layers.streets = new OpenLayers.Layer.WMS( 
+            	"Streets", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "tgr2006se_bern_lka", version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.streets)
+			
+			
+			
+		Layers.A5 = new OpenLayers.Layer.WMS( 
+            	"35106-A5", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "35106-A5", styles: 'dem', version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.A5)
+            
+           Layers.A6 = new OpenLayers.Layer.WMS( 
+            	"35106-A6 ", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "35106-A6 ", styles: 'dem', version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.A6)
+            
+            Layers.A5Cont2 = new OpenLayers.Layer.WMS( 
+            	"35106-A5_CONT2 - Styled", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "35106-A5_CONT2", version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.A5Cont2)
+			
+			
+			
+		Layers.streets2 = new OpenLayers.Layer.WMS( 
+            	"Streets - Styled", 
+            	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
+            	{layers: "tgr2006se_bern_lka2", version: '1.1.1', transparent: 'true'},
+            	{isBaseLayer: false, visibility: false}
+            );
+            map.addLayer(Layers.streets2);
+            
+  	
+           			
+			map.setCenter(
+                new OpenLayers.LonLat(lon, lat), zoom
+            );
+            map.addControl(new OpenLayers.Control.LayerSwitcher() );
+            map.addControl(new OpenLayers.Control.MousePosition() );
+            map.addControl(new OpenLayers.Control.Permalink() );
+            map.addControl(new OpenLayers.Control.PanZoomBar() );
+               
+        }
+     
+	</script>
+	<style type="text/css">
+ #map {width:90%; height:800px}
+        body { color: black; background: grey; }
+  		  h1 { color: blue }
+  		  h2 { color: black }
+  		  body { margin-left: 10%; margin-right: 10%; }
+  		  h1 { margin-left: -8%;}
+   		  h2 { margin-left: -4%; }
+                  html { height: 100% }
+	</style>
+  </head>
+	<body onload="init()">
+	<h1>Final Exam</h1>
+	<p>
+	Garrett Moise
+	</p>
+	</br>
+	<h2>1.</h2>
+	<p>gdalinfo (35106-A5.tif)</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/35106-A5_gdalinfo_zps5b7e7076.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/35106-A5_gdalinfo_zps5b7e7076.jpg" border="0" alt=" photo 35106-A5_gdalinfo_zps5b7e7076.jpg"/></a>	</br>
+	</br>
+	<p>gdalinfo (35106-A6.tif)</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/35106-A6_gdalinfo_zpsce04280a.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/35106-A6_gdalinfo_zpsce04280a.jpg" border="0" alt=" photo 35106-A6_gdalinfo_zpsce04280a.jpg"/></a>	</br>
+	</br>
+	<p>ogrinfo (tgr2006se_bern_lka.shp)</p>
+	</br>
+	</br>
+	<p>ogrinfo (35106-A5_CONT.shp)</p>
+	</br>
+	</br>
+	<p>ogrinfo (35106-A6_CONT.shp)</p>
+	</br>
+	</br>
+	<h2>2.</h2>
+	<p>35106-A5_CONT</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/35106-A5CONTpreview_zps7725da97.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/35106-A5CONTpreview_zps7725da97.jpg" border="0" alt=" photo 35106-A5CONTpreview_zps7725da97.jpg"/></a>	</br>
+	<p>35106-A6_CONT</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/35106-A6CONTpreview_zps17f9d21b.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/35106-A6CONTpreview_zps17f9d21b.jpg" border="0" alt=" photo 35106-A6CONTpreview_zps17f9d21b.jpg"/></a>	</br>
+	</br>
+	<p>35106-A5 (Added DEM style so it would be visible)</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/35106-A5preview_zpsfdcfd9b6.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/35106-A5preview_zpsfdcfd9b6.jpg" border="0" alt=" photo 35106-A5preview_zpsfdcfd9b6.jpg"/></a>	</br>
+	</br>
+	<p>tgr2006se_bern_lka</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/tgr2006preview_zps539c3921.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/tgr2006preview_zps539c3921.jpg" border="0" alt=" photo tgr2006preview_zps539c3921.jpg"/></a>	</br>
+	</br>
+	<p>35106-A6 (Added DEM style so it would be visible)</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/35106-A6preview_zpsf794be78.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/35106-A6preview_zpsf794be78.jpg" border="0" alt=" photo 35106-A6preview_zpsf794be78.jpg"/></a>	</br>
+	</br>
+	<h2>3.</h2>
+	<p>35106-A5_CONT</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/A5_CONT_QGIS_zpsb9123f07.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/A5_CONT_QGIS_zpsb9123f07.jpg" border="0" alt=" photo A5_CONT_QGIS_zpsb9123f07.jpg"/></a>	</br>
+	</br>
+	<p>35106-A6_CONT</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/A6_CONT_QGIS_zps8faabfe7.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/A6_CONT_QGIS_zps8faabfe7.jpg" border="0" alt=" photo A6_CONT_QGIS_zps8faabfe7.jpg"/></a>	</br>
+	</br>
+	<p>tgr2006se_bern_lka</p>
+<a href="http://s1368.photobucket.com/user/garrettmoise/media/Final/tiger_qgis_zps5627f142.jpg.html" target="_blank"><img src="http://i1368.photobucket.com/albums/ag168/garrettmoise/Final/tiger_qgis_zps5627f142.jpg" border="0" alt=" photo tiger_qgis_zps5627f142.jpg"/></a>	</br>
+	</br>
+	<h2>4</h2>
+	<div id="map"></div>
+	</br>
+	</br>
+	<h2>5</h2>
+	<p>Custom Styled Layer 1: tgr2006se_bern_lka2</p>
+	<ul>
+	<li>Labeled in Map as layer "Streets - Styled"</li>	
+	</ul>
+	<p>Custom Styled Layer 2: 35106-A5_CONT2</p>
+	<ul>
+	<li>Labeled in Map as layer "35106-A5_CONT2 - Styled"</li>	
+	</ul>
+	
+	
+	</body>
+	
+	
+		<FORM METHOD="LINK" ACTION="http://garrettmoise.github.io/GKM_GEOG485/index.html">
+<INPUT TYPE="submit" VALUE="Back to Home">
+</FORM>
+</html>
