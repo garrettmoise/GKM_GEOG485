@@ -50,13 +50,13 @@
 			
 			
 			
-		Layers.streets = new OpenLayers.Layer.WMS( 
-            	"Streets", 
+		Layers.tgr2006_streets = new OpenLayers.Layer.WMS( 
+            	"tgr2006 Streets", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
             	{layers: "gm_tgr2006se_bern_lka", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
-            map.addLayer(Layers.streets)
+            map.addLayer(Layers.tgr2006_streets)
 			
 			
 			
@@ -77,9 +77,9 @@
             map.addLayer(Layers.A6)
             
             Layers.A5Cont2 = new OpenLayers.Layer.WMS( 
-            	"35106-A5_CONT2 - Styled", 
+            	"35106-A5_CONTedit - Styled", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "35106-A5_CONT2", version: '1.1.1', transparent: 'true'},
+            	{layers: "35106-A5_CONT_edit", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.A5Cont2)
@@ -87,9 +87,9 @@
 			
 			
 		Layers.streets2 = new OpenLayers.Layer.WMS( 
-            	"Streets - Styled", 
+            	"tgr2006 Streetsedit - Styled", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "tgr2006se_bern_lka2", version: '1.1.1', transparent: 'true'},
+            	{layers: "tgr2006se_bern_lka_edit", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.streets2);
