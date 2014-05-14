@@ -33,7 +33,7 @@
             Layers.A5Cont = new OpenLayers.Layer.WMS( 
             	"35106-A5_CONT", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "35106-A5_CONT", version: '1.1.1', transparent: 'true'},
+            	{layers: "gm_35106-A5_CONT", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.A5Cont)
@@ -43,7 +43,7 @@
 		Layers.A6Cont = new OpenLayers.Layer.WMS( 
             	"35106-A6_CONT", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "35106-A6_CONT", version: '1.1.1', transparent: 'true'},
+            	{layers: "gm_35106-A6_CONT", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.A6Cont)
@@ -53,7 +53,7 @@
 		Layers.streets = new OpenLayers.Layer.WMS( 
             	"Streets", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "tgr2006se_bern_lka", version: '1.1.1', transparent: 'true'},
+            	{layers: "gm_tgr2006se_bern_lka", version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.streets)
@@ -63,7 +63,7 @@
 		Layers.A5 = new OpenLayers.Layer.WMS( 
             	"35106-A5", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "35106-A5", styles: 'dem', version: '1.1.1', transparent: 'true'},
+            	{layers: "gm_35106-A5", styles: 'dem', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.A5)
@@ -71,7 +71,7 @@
            Layers.A6 = new OpenLayers.Layer.WMS( 
             	"35106-A6 ", 
             	"http://geog485.unm.edu:8080/geoserver/s_gmoise/ows?",
-            	{layers: "35106-A6 ", styles: 'dem', version: '1.1.1', transparent: 'true'},
+            	{layers: "gm_35106-A6 ", styles: 'dem', version: '1.1.1', transparent: 'true'},
             	{isBaseLayer: false, visibility: false}
             );
             map.addLayer(Layers.A6)
